@@ -14,6 +14,9 @@
         if (!pathname.startsWith(basePath)) {
           // Redirect to the correct base path with the current pathname
           window.location.replace(basePath + pathname);
+        } else {
+          // Redirect to the root of the SPA
+          window.location.replace(basePath + "/");
         }
       })();
     </script>

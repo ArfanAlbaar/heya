@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Not Found</title>
     <script>
-      // Redirect to the root of the SPA
-      window.location.href = "/heya" + window.location.pathname;
+      (function () {
+        // Get the current path
+        const pathname = window.location.pathname;
+
+        // Check if the current path already starts with the base path
+        const basePath = "/heya";
+        if (!pathname.startsWith(basePath)) {
+          // Redirect to the correct base path with the current pathname
+          window.location.replace(basePath + pathname);
+        }
+      })();
     </script>
   </head>
   <body></body>
